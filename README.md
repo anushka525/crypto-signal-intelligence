@@ -1,116 +1,192 @@
-🚀 AI Crypto Trading Signal Intelligence System
+<div align="center">
 
-AI-powered crypto trading signal intelligence platform that generates intraday market analysis and smart trade recommendations using Gemini GenAI.
+# 🚀 AI Crypto Trading Signal Intelligence System
 
-📌 Overview
+### AI-Powered Crypto Market Analysis & Trading Recommendation Engine
 
-The AI Crypto Trading Signal Intelligence System is a Flask-based RESTful backend application that:
+<p>
+  <img src="https://img.shields.io/badge/Python-3.10+-blue?logo=python" />
+  <img src="https://img.shields.io/badge/Flask-REST--API-black?logo=flask" />
+  <img src="https://img.shields.io/badge/SQLite-Database-blue?logo=sqlite" />
+  <img src="https://img.shields.io/badge/Gemini-GenAI-orange" />
+  <img src="https://img.shields.io/badge/Status-Active-success" />
+</p>
 
-Manages crypto assets and trading signals
+</div>
 
-Stores structured market data
+---
 
-Generates AI-powered intraday summaries & trade recommendations
+## 📖 Overview
 
-It combines traditional backend engineering with Generative AI to simulate a real-world trading intelligence system.
+The **AI Crypto Trading Signal Intelligence System** is a backend application built using **Flask + SQLite + Gemini AI** that:
 
-🛠️ Tech Stack
+- 📊 Manages crypto assets and trading signals  
+- 🗄️ Stores structured market data  
+- 🧠 Generates AI-powered intraday summaries  
+- 📈 Provides Buy / Sell / Hold recommendations  
 
-Python
+It combines traditional backend engineering with Generative AI to simulate a real-world crypto intelligence system.
 
-Flask (REST API)
+---
 
-SQLite + SQLAlchemy (ORM)
+## ✨ Features
 
-Gemini (Google GenAI)
+### 🔹 Core Backend
+- Full CRUD APIs (Users, Assets, Signals)
+- Multi-table relational database
+- Clean route-service architecture
+- Centralized error handling
 
-Thunder Client / Postman
+### 🔹 AI Intelligence
+- Intraday market summary generation
+- Trade recommendation engine
+- Risk analysis insights
+- Auto signal generation endpoint
 
-✨ Features
+### 🔹 System
+- Environment-based configuration
+- Structured logging
+- Modular project structure
 
-🔹 CRUD APIs for Users, Assets & Signals
+---
 
-🔹 Multi-table relational database (SQLite)
+## 🛠️ Tech Stack
 
-🔹 AI-powered market summary & recommendation engine
+| Category | Technology |
+|----------|------------|
+| Language | Python |
+| Framework | Flask |
+| Database | SQLite |
+| ORM | SQLAlchemy |
+| AI | Gemini (Google GenAI) |
+| Testing | Thunder Client / Postman |
 
-🔹 Auto signal generation endpoint
+---
 
-🔹 Structured logging & centralized error handling
-
-🔹 Environment-based configuration (.env support)
-
-📂 Project Structure
+## 🏗️ Project Structure
+```
 AI-Crypto-Trading-Signal-Intelligence/
 │
-├── app.py               # Application entry point
-├── config.py            # Environment configuration
-├── database.py          # DB initialization
+├── app.py                # Entry point
+├── config.py             # Configuration
+├── database.py           # Database initialization
 │
-├── routes/              # API routes
+├── routes/               # API routes
 │   ├── assets.py
 │   ├── signals.py
 │   └── ai.py
 │
-├── services/            # Business logic & Gemini integration
-│
-├── logs/                # Application logs
-└── instance/            # SQLite database file
+├── services/             # Business logic & Gemini integration
+├── logs/                 # Application logs
+└── instance/             # SQLite database
+```
 
-⚙️ Setup & Installation
-1️⃣ Create Virtual Environment
+---
+
+## 🚀 Getting Started
+
+Follow these steps to run the project locally.
+
+### 1️⃣ Create Virtual Environment
+
+```bash
 python -m venv .venv
+```
 
+Activate the virtual environment:
 
-Activate environment:
-
-Windows (PowerShell)
-
+**Windows**
+```bash
 .venv\Scripts\Activate.ps1
+```
 
-
-Mac/Linux
-
+**Mac/Linux**
+```bash
 source .venv/bin/activate
+```
 
-2️⃣ Install Dependencies
+---
+
+### 2️⃣ Install Dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
-3️⃣ Configure Environment Variables
+---
 
-Create a .env file in root directory:
+### 3️⃣ Configure Environment Variables
 
+Create a `.env` file in the root directory:
+
+```env
 GEMINI_API_KEY=YOUR_GEMINI_API_KEY
 GEMINI_MODEL=gemini-3-flash-preview
 DATABASE_PATH=./instance/crypto_intel.db
+```
 
-4️⃣ Run the Server
+⚠️ Do not commit the `.env` file to GitHub.
+
+---
+
+### 4️⃣ Run the Application
+
+```bash
 python app.py
+```
 
+Server will start at:
 
-Server runs at:
-
+```
 http://127.0.0.1:8000
+```
 
-🔌 API Endpoints
-📦 Assets
-Method	Endpoint	Description
-POST	/api/assets/	Create new asset
-GET	/api/assets/	Get all assets
-GET	/api/assets/{id}	Get asset by ID
-PUT/PATCH	/api/assets/{id}	Update asset
-DELETE	/api/assets/{id}	Delete asset
-📊 Signals
-Method	Endpoint	Description
-GET	/api/signals/	Get all signals
-GET	/api/signals/{id}	Get signal by ID
-PUT/PATCH	/api/signals/{id}	Update signal
-DELETE	/api/signals/{id}	Delete signal
-POST	/api/signals/auto	Auto-generate trading signal
-🤖 AI Intelligence
-Method	Endpoint	Description
-POST	/api/ai/summary	Generate AI-based market summary
-📝 Example AI Request
+---
+
+## 🔌 API Endpoints
+
+### Base URL
+```
+http://127.0.0.1:8000
+```
+
+---
+
+### 📦 Assets
+
+| Method | Endpoint | Description |
+|--------|----------|------------|
+| POST | `/api/assets/` | Create new asset |
+| GET | `/api/assets/` | Get all assets |
+| GET | `/api/assets/{id}` | Get asset by ID |
+| PUT/PATCH | `/api/assets/{id}` | Update asset |
+| DELETE | `/api/assets/{id}` | Delete asset |
+
+---
+
+### 📊 Signals
+
+| Method | Endpoint | Description |
+|--------|----------|------------|
+| GET | `/api/signals/` | Get all signals |
+| GET | `/api/signals/{id}` | Get signal by ID |
+| PUT/PATCH | `/api/signals/{id}` | Update signal |
+| DELETE | `/api/signals/{id}` | Delete signal |
+| POST | `/api/signals/auto` | Generate signal automatically |
+
+---
+
+### 🤖 AI
+
+**Endpoint**
+
+```
+POST /api/ai/summary
+```
+
+**Example Request**
+
+```json
 {
   "signal_id": 1,
   "market": {
@@ -120,69 +196,45 @@ POST	/api/ai/summary	Generate AI-based market summary
     "volatility": 0.018
   }
 }
+```
 
-🧠 How AI Works
+---
 
-User provides signal ID and current market indicators
+## 🧠 AI Workflow
 
-Backend fetches stored signal data
+1. Fetch signal data from database  
+2. Accept real-time market indicators  
+3. Build structured AI prompt  
+4. Send request to Gemini API  
+5. Return AI-generated recommendation  
 
-Market data + signal data are sent to Gemini
+---
 
-Gemini generates:
-
-Market summary
-
-Buy/Sell/Hold recommendation
-
-Risk insight
-
-Structured response returned via API
-
-📜 Logging
+## 📝 Logging
 
 Logs are stored in:
 
+```
 logs/app.log
-
+```
 
 Includes:
 
-API errors
+- API errors  
+- Database exceptions  
+- AI processing failures  
 
-Database errors
+---
 
-AI response issues
+## ⚠️ Important Notes
 
-System events
+- Ensure `GEMINI_MODEL` matches your API key capability.
+- If database schema changes, delete:
+  ```
+  instance/crypto_intel.db
+  ```
+  and restart the server.
+- Never commit `.env` file to GitHub.
 
-⚠️ Important Notes
+---
 
-Ensure GEMINI_MODEL matches the model supported by your API key.
-
-If database schema changes:
-
-Delete instance/crypto_intel.db
-
-Restart server to recreate tables.
-
-Do NOT commit .env to GitHub.
-
-🚀 Future Enhancements
-
-JWT Authentication
-
-Role-based Access Control
-
-PostgreSQL support
-
-Docker containerization
-
-Real-time crypto price integration
-
-Backtesting engine
-
-👩‍💻 Author
-
-Anushka
-Backend & AI Developer
