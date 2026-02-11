@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crypto Signal Intelligence</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  </head>
+  <body>
+    <div class="grain"></div>
+    <header class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Intraday AI Signals</p>
+        <h1>Crypto Signal Intelligence</h1>
+        <p class="subtitle">
+          Fast, explainable trade signals powered by Gemini, with clean CRUD workflows and
+          a lightweight dashboard.
+        </p>
+        <div class="hero-actions">
+          <button id="refreshAll" class="btn primary">Refresh Data</button>
+          <button id="clearOutput" class="btn ghost">Clear Output</button>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <div class="metric">
+          <span class="label">Status</span>
+          <span id="statusBadge" class="value ok">API Ready</span>
+        </div>
+        <div class="metric">
+          <span class="label">Signals</span>
+          <span id="signalCount" class="value">0</span>
+        </div>
+        <div class="metric">
+          <span class="label">Assets</span>
+          <span id="assetCount" class="value">0</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="grid">
+
+      <section class="card flow-card">
+        <div class="card-header">
+          <h2>Create Asset</h2>
+        </div>
+        <form id="assetForm" class="form">
+          <input name="symbol" placeholder="Symbol (BTCUSDT)" required />
+          <input name="name" placeholder="Name (Bitcoin)" required />
+          <input name="exchange" placeholder="Exchange (binance)" />
+          <button class="btn primary" type="submit">Create Asset</button>
+        </form>
+      </section>
+
+      <section class="card flow-card focus">
+        <div class="card-header">
+          <h2>Auto Signal (Binance)</h2>
+        </div>
+        <form id="autoSignalForm" class="form">
+          <input name="asset_id" placeholder="Asset ID" required type="number" />
+          <input name="timeframe" placeholder="Timeframe (5m)" />
+          <button class="btn primary" type="submit">Generate Auto Signal</button>
+        </form>
+      </section>
+
+
+      <section class="card flow-card">
+        <div class="card-header">
+          <h2>AI Summary</h2>
+        </div>
+        <form id="aiForm" class="form">
+          <input name="signal_id" placeholder="Signal ID" required type="number" />
+          <input name="last_price" placeholder="Last Price" type="number" step="0.01" />
+          <input name="rsi" placeholder="RSI" type="number" step="0.01" />
+          <input name="macd" placeholder="MACD" type="number" step="0.01" />
+          <input name="volatility" placeholder="Volatility" type="number" step="0.001" />
+          <button class="btn primary" type="submit">Generate Insight</button>
+        </form>
+      </section>
+
+
+      <section class="card wide">
+        <h2>Latest Response</h2>
+        <pre id="output" class="output">Ready.</pre>
+      </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  </body>
+</html>

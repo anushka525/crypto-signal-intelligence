@@ -1,0 +1,11 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+instance/
+logs/
+.env
+.vscode/
+.DS_Store
+HomeImage.png
+zphasesnotes
